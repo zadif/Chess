@@ -11,9 +11,7 @@ Chess::Chess()
 	p1.setplayer1();
 	p2.setplayer2();
 }
-void Chess::playchess()
-{
-
+void Chess::initializeGame() {
 	player1currentposition.colour = White;
 	player2currentposition.colour = Black;
 	wkinglocation.colour = White;
@@ -33,6 +31,11 @@ void Chess::playchess()
 	bknight1location.colour = Black;
 	bknight2location.colour = Black;
 	
+}
+
+void Chess::playchess()
+{
+	initializeGame();
 
 	do
 	{
@@ -78,26 +81,7 @@ void Chess::playchess()
 }
 void Chess::playkingrush()
 {
-
-	player1currentposition.colour = White;
-	player2currentposition.colour = Black;
-	wkinglocation.colour = White;
-	bkinglocation.colour = Black;
-	wqueenlocation.colour = White;
-	bqueenlocation.colour = Black;
-	brook1location.colour = Black;
-	brook2location.colour = Black;
-	wrook1location.colour = White;
-	wrook2location.colour = White;
-	bbishop1location.colour = Black;
-	bbishop2location.colour = Black;
-	wbishop1location.colour = White;
-	wbishop2location.colour = White;
-	wknight1location.colour = White;
-	wknight2location.colour = White;
-	bknight1location.colour = Black;
-	bknight2location.colour = Black;
-	
+	initializeGame();
 
 	do
 	{
@@ -144,25 +128,7 @@ void Chess::playkingrush()
 void Chess::playtalgambit()
 {
 	talgambit = 1;
-	player1currentposition.colour = White;
-	player2currentposition.colour = Black;
-	wkinglocation.colour = White;
-	bkinglocation.colour = Black;
-	wqueenlocation.colour = White;
-	bqueenlocation.colour = Black;
-	brook1location.colour = Black;
-	brook2location.colour = Black;
-	wrook1location.colour = White;
-	wrook2location.colour = White;
-	bbishop1location.colour = Black;
-	bbishop2location.colour = Black;
-	wbishop1location.colour = White;
-	wbishop2location.colour = White;
-	wknight1location.colour = White;
-	wknight2location.colour = White;
-	bknight1location.colour = Black;
-	bknight2location.colour = Black;
-	
+	initializeGame();
 
 	do
 	{

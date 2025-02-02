@@ -22,6 +22,7 @@ public:
 	void currentposition(Move&);
 	void play1();
 	void play2();
+	void initializeGame();
 	void makemove(int, int, int, int);
 	Move getking(Move& m1);
 	Move getqueen(Move&);
