@@ -28,6 +28,7 @@ public:
 	void createboard3();
 	void writeinfile(Board&, const string&);
 	static bool readfromfile(Board&, const string&);
+	string fenGenerator();
 
 	~Board();
 };

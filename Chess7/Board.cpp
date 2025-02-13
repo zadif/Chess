@@ -1,6 +1,7 @@
 #include "Board.h"
 #include"Queen.h"
 #include"Camel.h"
+#include <string>
 #include<fstream>
 ifstream fin;
 ofstream fout;
@@ -295,8 +296,6 @@ void Board:: writeinfile(Board& b1, const string& filename)
 		return;
 	}
 
-	
-
 	for (int i = 7; i >= 0; i--)
 	{
 
@@ -316,7 +315,43 @@ void Board:: writeinfile(Board& b1, const string& filename)
 	fout.close();
 
 }
+string Board:: fenGenerator() {
+	string fen = "";
+	int count = 0;
+	for (int i = 7; i >= 0; i--)
+	{
+		count = 0;
+		for (int j = 0; j < 8; j++)
+		{
+			if (boardptr[i][j] == nullptr) {
+				count++;
+			}
+			else{
+				if (count != 0) {
+					fen += to_string(count);
+					count = 0;
 
+				}
+
+				if (boardptr[i][j]->colour == White) {
+
+				fen+= boardptr[i][j]->symbol;
+				}
+				else {
+					fen+=char(boardptr[i][j]->symbol+32);
+
+				}
+			}
+		}
+		fen += "/";
+		if (count != 0) {
+			fen += to_string(count);
+				
+		}
+	}
+	return fen;
+
+}
 bool Board::readfromfile(Board& b1, const string& filename)
 {
 	fin.open(filename);

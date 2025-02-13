@@ -76,6 +76,9 @@ void Chess::playchess()
 			return;
 		}
 		b1.writeinfile(b1, "Chess1.txt");
+		string fen=b1.fenGenerator();
+		cout << endl << fen;
+		Sleep(3000);
 	} while (1);
 
 }
